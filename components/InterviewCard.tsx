@@ -5,13 +5,15 @@ import {getRandomInterviewCover} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import DisplayTechIcons from "@/components/DisplayTechIcons";
+
+
 const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt}:InterviewCardProps) => {
     const feedback = null as Feedback | null;
     const normalizedType = /mix/gi.test(type)? 'Mixed': type;
     const formattedDate = dayjs(feedback?.createdAt || createdAt||
     Date.now()).format('MMM D, YYYY');
     return (
-        <div className="card-border w-[360px] max-sm:w-full min-h-96 ">
+        <div className="card-border w-[360px] max-sm:w-full min-h-46 ">
             <div className="card-interview">
                 <div>
                     <div className="absolute top=0 right-0 w-fit px-4 py-2 rounded-bl-gl bg-light-600">
@@ -36,17 +38,17 @@ const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt}:I
                 <p className="line-clamp-2">
                     {feedback?.finalAssessment || "You haven't taken the interview yet. Take it now to improve your skills."}
                 </p>
-            </div>
-            <div className="flex flex-row justify-between">
-               <DisplayTechIcons techStack={techstack}/>
-                <Button className="btn-primary">
-                    <Link href={feedback
-                    ?`/interview/${interviewId}/feedback`
-                    :`/interview/${interviewId}`}>
-                    {feedback? 'Check Feedback' : 'View Interview'}
-                    </Link>
-                </Button>
+                <div className="flex flex-row justify-between">
+                    <DisplayTechIcons techStack={techstack}/>
+                    <Button className="btn-primary">
+                        <Link href={feedback
+                            ?`/interview/${interviewId}/feedback`
+                            :`/interview/${interviewId}`}>
+                            {feedback? 'Check Feedback' : 'View Interview'}
+                        </Link>
+                    </Button>
 
+                </div>
             </div>
         </div>
     )
