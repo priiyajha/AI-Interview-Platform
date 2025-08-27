@@ -8,8 +8,8 @@ import InterviewCard from "@/components/InterviewCard";
 const Page = () => {
     return (
         <>
-            <section className="call-cta-full-width">
-                <div className="flex flex-col gap-6">
+            <section className="card-cta">
+                <div className="flex flex-col gap-6 max-w-lg">
                     <h2>Get Interview-Ready with AI-powered practice.</h2>
                     <p className="text-lg">Practice on real interview questions and get instant feedback.</p>
                     <Button asChild className="btn-primary max-sm:w-full">
