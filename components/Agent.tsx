@@ -53,7 +53,7 @@ const Agent = ({userName}: AgentProps) => {
                                 src="/user-avatar.png"
                                 alt="profile-image"
                                 width={539}
-                                height={539}
+                                height={540}
                                 className="rounded-full object-cover size-[120px]"
                             />
                             <h3>{userName}</h3>

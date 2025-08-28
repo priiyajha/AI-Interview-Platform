@@ -17,7 +17,7 @@ export async function setSessionCookie(idToken: string) {
 
     // Set cookie in the browser
     cookieStore.set("session", sessionCookie, {
-        maxAge: SESSION_DURATION * 1000,
+        maxAge: SESSION_DURATION,
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         path: "/",
@@ -79,8 +79,8 @@ export async function signIn(params: SignInParams) {
             };
 
         await setSessionCookie(idToken);
-    } catch (error) {
-        console.log("error creating user:", error);
+    } catch (error: any) {
+        console.log("");
 
         return {
             success: false,
