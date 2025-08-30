@@ -4,6 +4,7 @@ import Image from "next/image";
 
 
 import { cn } from "@/lib/utils";
+import {useRouter} from "next/navigation";
 
 
 enum CallStatus {
@@ -15,8 +16,8 @@ enum CallStatus {
 
 
 
-const Agent = ({userName}: AgentProps) => {
-
+const Agent = ({userName, userId, type}: AgentProps) => {
+    const router = useRouter();
     const callStatus = CallStatus.FINISHED;
     const isSpeaking = true;
     const messages = [
