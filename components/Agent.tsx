@@ -85,7 +85,7 @@ const Agent = ({userName, userId, type, interviewId, questions}: AgentProps) => 
                 router.push('/');
             }
             else {
-                handleGenerateFeedback(messages);
+                handleGenerateFeedback(message);
             }
         }
     }, [message, callStatus, type, userId,]);
